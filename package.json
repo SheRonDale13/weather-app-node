@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A Node.js app to get weather conditions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "weather",
+    "request"
+  ],
+  "author": "Sherin Binu",
+  "license": "ISC",
+  "dependencies": {
+    "request": "2.81.0"
+  }
+}

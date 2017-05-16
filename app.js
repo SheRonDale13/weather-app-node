@@ -6,7 +6,6 @@ const weather = require('./weather/weather');
 const argv = yargs
   .options({
     a: {
-      demand: true,
       alias: 'address',
       describe: "Address of the location",
       string: true
@@ -15,9 +14,13 @@ const argv = yargs
   .help()
   .alias('help', 'h')
   .argv;
-geocode.geocodeAddress(argv.address, (errorMessage, results) => {
+let address;
+if(argv.address) address = argv.address;
+else address = "trichy";
+geocode.geocodeAddress(address, (errorMessage, results) => {
   if (errorMessage) console.log(errorMessage)
   else {
+    console.log(results.address);
     weather.getWeatherInfo(results.latitude, results.longitude, (errorMessage, results) => {
       if(errorMessage) console.log(errorMessage);
       else console.log(JSON.stringify(results, undefined, 2));

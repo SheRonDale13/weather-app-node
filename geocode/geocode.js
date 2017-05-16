@@ -8,6 +8,7 @@ let geocodeAddress = (address, callback) => {
     if (error) callback("Sorry, Unable to connect to Google Servers. Please check your internet connection")
     else if (response.statusCode == 200 && body.status == "OK") {
       callback(undefined, {
+        address: body.results[0].formatted_address,
         latitude: body.results[0].geometry.location.lat,
         longitude: body.results[0].geometry.location.lng
       });

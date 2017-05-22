@@ -1,5 +1,5 @@
 {
-  "name": "weather-app",
+  "name": "weatherpro",
   "version": "1.0.0",
   "description": "A Node.js app to get weather conditions",
   "main": "app.js",
@@ -12,10 +12,13 @@
     "request"
   ],
   "author": "Sherin Binu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "request": "2.81.0",
     "yargs": "8.0.1",
     "axios": "0.16.1"
+  },
+  "bin": {
+    "weatherpro": "app-promise.js"
   }
 }
